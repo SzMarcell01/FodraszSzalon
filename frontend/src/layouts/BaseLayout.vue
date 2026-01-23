@@ -2,7 +2,7 @@
   <header>
     <BaseHeader class="w-full bg-[#f5ddff]"/>
   </header>
-  <main class="container mx-auto">
+  <main>
     <slot />
   </main>
 </template>
