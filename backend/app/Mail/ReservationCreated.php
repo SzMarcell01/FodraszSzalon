@@ -22,9 +22,15 @@ class ReservationCreated extends Mailable
     }
 
     public function build()
-    {
-        return $this
-            ->subject('Foglalás visszaigazolás')
-            ->markdown('emails.reservation.created');
-    }
+{
+    return $this->subject('Foglalás visszaigazolás')
+                ->html(view('emails.reservation.created_html', [
+                    'first_name' => $this->reservation->first_name,
+                    'last_name' => $this->reservation->last_name,
+                    'reservation_date_time' => $this->reservation->reservation_date_time,
+                    'duration' => $this->reservation->duration,
+                    'phone' => $this->reservation->phone,
+                ])->render());
+}
+
 }
