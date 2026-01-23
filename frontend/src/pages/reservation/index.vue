@@ -1,6 +1,6 @@
 <template>
     <BaseLayout>
-    
+        
     </BaseLayout>
 </template>
 <script>
@@ -14,9 +14,9 @@ export default{
 </script>
 <route lang="json">
    {
-        "name": "main-page",
+        "name": "reservation-page",
         "meta": {
-            "title": "Főoldal"
+            "title": "Foglalás oldal"
         }
    } 
 </route>

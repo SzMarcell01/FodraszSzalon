@@ -14,9 +14,9 @@ export default{
 </script>
 <route lang="json">
    {
-        "name": "main-page",
+        "name": "gallery-page",
         "meta": {
-            "title": "Főoldal"
+            "title": "Galépria oldal"
         }
    } 
 </route>
