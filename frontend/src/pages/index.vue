@@ -1,8 +1,8 @@
 <template>
     <BaseLayout>
-    
     </BaseLayout>
 </template>
+
 <script>
 import BaseLayout from '@layouts/BaseLayout.vue';
 
@@ -12,6 +12,7 @@ export default{
     }
 }
 </script>
+
 <route lang="json">
    {
         "name": "main-page",

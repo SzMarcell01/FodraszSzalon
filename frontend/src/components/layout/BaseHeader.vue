@@ -4,16 +4,16 @@
             <h1 class="text-xl font-semibold">FodrászSzalon</h1>
         </div>
         <div class="flex gap-10 font-semibold">
-            <RouterLink class="" :to="{name: 'main-page'}">
+            <RouterLink to="#">
                 Rólunk
             </RouterLink>
-            <RouterLink class="" :to="{name: 'gallery-page'}">
+            <RouterLink  to="#">
                 Galléria
             </RouterLink>
-            <RouterLink class="" to="#">
+            <RouterLink to="#">
                 Elérhetőségek
             </RouterLink>
-            <RouterLink class="" :to="{name: 'reservation-page'}">
+            <RouterLink to="#">
                 Foglalás
             </RouterLink>
         </div>
