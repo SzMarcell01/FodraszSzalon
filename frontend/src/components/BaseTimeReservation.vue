@@ -1,7 +1,10 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="min-h-screen flex items-center justify-center bg-gray-100 relative">
+    <!-- Spinner overlay -->
+    <BaseSpinner :show="loading" />
+
     <form
-      class="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg space-y-4"
+      class="max-w-lg w-full mx-auto p-6 bg-white shadow-md rounded-lg space-y-4"
       @submit.prevent="submitReservation"
     >
       <div class="flex gap-4">
@@ -70,7 +73,8 @@
 
       <button
         type="submit"
-        class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600"
+        class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 disabled:opacity-50"
+        :disabled="loading"
       >
         Foglalás
       </button>
@@ -80,7 +84,11 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { http } from '@utils/http.mjs'
+import BaseSpinner from '@components/layout/BaseSpinner.vue' // a spinner komponens
+
+const router = useRouter()
 
 const firstName = ref('')
 const lastName = ref('')
@@ -88,11 +96,21 @@ const email = ref('')
 const phone = ref('')
 const reservationDateTime = ref('')
 const duration = ref(1)
+const loading = ref(false)
+
+const resetForm = () => {
+  firstName.value = ''
+  lastName.value = ''
+  email.value = ''
+  phone.value = ''
+  reservationDateTime.value = ''
+  duration.value = 1
+}
 
 const submitReservation = async () => {
+  loading.value = true
   try {
-    // Response változóhoz rendeljük a post hívást
-    const response = await http.post('/reservations', {
+    await http.post('/reservations', {
       firstName: firstName.value,
       lastName: lastName.value,
       email: email.value,
@@ -101,20 +119,16 @@ const submitReservation = async () => {
       duration: duration.value,
     })
 
-    // Backend message kiírása
-    alert(response.data.message)
+    // Form reset
+    resetForm()
 
-    // Sikeres küldés után form reset
-    firstName.value = ''
-    lastName.value = ''
-    email.value = ''
-    phone.value = ''
-    reservationDateTime.value = ''
-    duration.value = 1
-
+    // Átirányítás a siker oldalra
+    router.push('/reservation-success')
   } catch (error) {
     console.error(error)
     alert('Hiba történt a foglalás során')
+  } finally {
+    loading.value = false
   }
 }
 </script>
