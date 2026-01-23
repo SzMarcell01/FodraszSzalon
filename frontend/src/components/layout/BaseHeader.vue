@@ -1,22 +1,23 @@
 <template>
-    <div class="max-w mx-auto h-16 px-6 flex items-center justify-end">
-        <div class="w-full flex gap-10 text-2xl justify-end">
+    <nav class="w-full flex justify-between items-center p-4 bg-pink-200">
+        <div>
+            <h1 class="text-xl font-semibold">FodrászSzalon</h1>
+        </div>
+        <div class="flex gap-10 font-semibold">
             <RouterLink class="" :to="{name: 'main-page'}">
-                <p>Rólunk</p>
+                Rólunk
             </RouterLink>
             <RouterLink class="" :to="{name: 'gallery-page'}">
-                <p>Galléria</p>
+                Galléria
             </RouterLink>
-            <RouterLink class="" :to="{name: ''}">
-                <p>Elérhetőségek</p>
+            <RouterLink class="" to="#">
+                Elérhetőségek
             </RouterLink>
             <RouterLink class="" :to="{name: 'reservation-page'}">
-                <p>Foglalás</p>
+                Foglalás
             </RouterLink>
-            
         </div>
-    </div>
-    
+    </nav>
 </template>
 
 <script>
