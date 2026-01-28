@@ -1,0 +1,7 @@
+Név: Teszt Fodrász
+Szül. év: 2000 jan. 01.
+Nem: férfi
+Gmail: tesztfodrasz@gmail.com
+Jelszó: T3sztF0dRasz001
+Tel: +36 30 236 5045
+Alkalmazás specifikus jelszó: qyeh fqji pfrx totp 
