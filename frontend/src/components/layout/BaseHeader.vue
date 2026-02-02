@@ -20,7 +20,7 @@
   </nav>
 
   <div class="w-full min-h-screen bg-cover bg-center bg-[url('/bg.jpg')]">
-    <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+    <div class="absolute inset-0 bg-black/80 flex items-center justify-center">
       <div class="text-center text-white px-4 max-w-3xl">
         <h1 class="text-5xl text-[rgb(181_164_148)] font-bold font-serif mb-4">
           Fedezd fel az egyedi stílusod!
