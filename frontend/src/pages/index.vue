@@ -1,9 +1,6 @@
 <template>
   <BaseLayout>
-    <h1 class="text-6xl my-10">Hello!</h1>
-    <button class="bg-blue-500 text-white rounded py-2 px-4" @click="increment()">
-      Számláló: {{ counter }}
-    </button>
+
   </BaseLayout>
 </template>
 

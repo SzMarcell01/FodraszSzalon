@@ -1,46 +1,38 @@
 <template>
-  <nav class="bg-white">
-    <div class="flex justify-between p-3 border-b-2 flex-wrap">
-      <RouterLink to="/" class="flex items-center space-x-3">
-        <span class="self-center text-2xl font-semibold">Feladat</span>
-      </RouterLink>
-      <button class="block md:hidden" @click="toggleMenu">
-        <svg
-          class="w-5 h-5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 17 14"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 1h15M1 7h15M1 13h15"
-          />
-        </svg>
-      </button>
-      <div class="w-full md:block md:w-auto" :class="{hidden: !menuOpen}">
-        <ul class="flex flex-col p-4 md:flex-row md:p-0 md:space-x-8">
-          <li class="block py-2 px-3 text-gray-500 hover:bg-blue-400 hover:text-white rounded p-2 has-[.active]:text-blue-500 has-[.active]:hover:text-white"><RouterLink to="#">1. oldal</RouterLink></li>
-        </ul>
+  
+      <nav class="absolute max-w-375 mx-auto">
+        <div class="flex justify-between p-5">
+          <RouterLink to="/" class="flex items-center space-x-3">
+            <span class="self-center text-4xl font-semibold text-white">MolnArt</span>
+          </RouterLink>
+          
+          <div class="w-full">
+            <ul class="flex flex-col p-4 md:flex-row md:p-0 md:space-x-8">
+              <li class="text-white"><a href="#">Főoldal</a></li>
+              <li class="text-white"><a href="#">Galéria</a></li>
+              <li class="text-white"><a href="#">SzolgáltatásokterLink</a>></li>
+              <li class="text-white"><a href="#">Csapat</a></li>
+              <li class="text-white"><a href="#">Rólunk</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+  <div class="w-full min-h-screen bg-cover bg-center bg-[url('/bg.jpg')] ">
+    <div class=" bg-black/40 min-h-screen">
+      
+
+      <div class="flex items-center justify-center px-6">
+        <div class="text-center text-white">
+          <h1 class="text-4xl text-[rgb(181_164_148)] font-bold font-serif">Fedezd fel az egyedi stílusod!</h1>
+          <p>Nálunk a hajad a kreativitásunk vászna. Trendi, precíz, rád szabott vágások,<br> amik tényleg tükrözik a személyiséged. Foglalj online, és hagyd, hogy a <br> profik megalkossák a tökéletes frizurát.</p>
+        </div>
       </div>
     </div>
-  </nav>
+    
+  </div>
 </template>
 
 <script>
-export default{
-  data(){
-    return{
-      menuOpen: false
-    }
-  },
-  methods:{
-    toggleMenu(){
-      this.menuOpen = !this.menuOpen
-    }
-  }
-}
+
 </script>
