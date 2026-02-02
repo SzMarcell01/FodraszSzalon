@@ -1,6 +1,5 @@
 <template>
-  <BaseHeader />
-  <main class="mx-auto w-max-[1500px]">
+  <main class="mx-auto max-w-7xl">
     <slot />
   </main>
 </template>

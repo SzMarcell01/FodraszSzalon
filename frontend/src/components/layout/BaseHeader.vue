@@ -1,11 +1,11 @@
 <template>
-  
+
       <nav class="absolute max-w-375 mx-auto">
         <div class="flex justify-between p-5">
           <RouterLink to="/" class="flex items-center space-x-3">
             <span class="self-center text-4xl font-semibold text-white">MolnArt</span>
           </RouterLink>
-          
+
           <div class="w-full">
             <ul class="flex flex-col p-4 md:flex-row md:p-0 md:space-x-8">
               <li class="text-white"><a href="#">Főoldal</a></li>
@@ -20,7 +20,7 @@
 
   <div class="w-full min-h-screen bg-cover bg-center bg-[url('/bg.jpg')] ">
     <div class=" bg-black/40 min-h-screen">
-      
+
 
       <div class="flex items-center justify-center px-6">
         <div class="text-center text-white">
@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 </template>
 
