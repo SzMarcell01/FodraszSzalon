@@ -1,35 +1,31 @@
 <template>
 
 <div class="relative w-full min-h-screen">
-  <nav class="absolute top-0 left-0 w-full z-10">
-    <div class="max-w-7xl mx-auto flex justify-between items-center p-6">
+  <nav class="absolute top-0 left-0 w-full z-20">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-8">
       <RouterLink to="/" class="flex items-center">
-        <span class="self-center text-4xl font-semibold text-white">MolnArt</span>
+        <span class="text-4xl font-serif text-white tracking-wider">MolnArt</span>
       </RouterLink>
-      <ul class="flex space-x-8 text-white text-sm font-medium">
-        <li class="text-white"><a href="#">Főoldal</a></li>
-        <li class="text-white"><a href="#">Galéria</a></li>
-        <li class="text-white"><a href="#">Szolgáltatások</a></li>
-        <li class="text-white"><a href="#">Csapat</a></li>
-        <li class="text-white"><a href="#">Rólunk</a></li>
+      
+      <ul class="hidden md:flex space-x-10 text-white text-sm uppercase tracking-[0.2em] font-light">
+        <li v-for="item in ['Főoldal', 'Galéria', 'Szolgáltatások', 'Csapat', 'Rólunk']" :key="item">
+          <a href="#" class="relative group py-2 transition duration-500 hover:text-[#c5b4a2]">
+            {{ item }}
+            <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
 
   <div class="w-full min-h-screen bg-cover bg-center bg-[url('/bg.jpg')]">
     <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
-      <div class="text-center text-white px-4 max-w-3xl">
-        <h1 class="text-5xl text-[rgb(181_164_148)] font-bold font-serif mb-4">
-          Fedezd fel az egyedi stílusod!
-        </h1>
+      <div class="text-center text-white px-4">
+        <h1 class="text-5xl text-[rgb(181_164_148)] font-bold font-serif mb-4">Fedezd fel az egyedi stílusod!</h1>
       
-        <p class="mb-6">
-          Nálunk a hajad a kreativitásunk vászna. Trendi, precíz, rád szabott vágások,<br class="hidden md:block"> 
-          amik tényleg tükrözik a személyiséged. Foglalj online, és hagyd, hogy a <br class="hidden md:block"> 
-          profik megalkossák a tökéletes frizurát.
-        </p>
+        <p class="p-3">Nálunk a hajad a kreativitásunk vászna. Trendi, precíz, rád szabott vágások,<br> amik tényleg tükrözik a személyiséged. Foglalj online, és hagyd, hogy a <br> profik megalkossák a tökéletes frizurát.</p>
         
-        <button class="bg-[#c5b4a2] hover:bg-[#b3a18f] text-black px-10 py-3 rounded-sm transition duration-300 uppercase text-sm font-semibold">
+        <button class="border-blak bg-[#c5b4a2] hover:bg-[#c5b4a2] text-black hover:text-white py-3 px-15 rounded-sm transition duration-600 text-sm font-semibold">
           Szolgáltatásaink
         </button>
       </div>
