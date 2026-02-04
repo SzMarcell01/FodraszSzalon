@@ -16,6 +16,7 @@
 <script setup>
 import BaseLayout from '@layouts/BaseLayout.vue'
 import BaseCard from '@components/layout/BaseCard.vue'
+import BaseHeader from '@components/layout/BaseHeader.vue'
 
 
 // 1. Beolvassuk a modulokat
