@@ -1,9 +1,7 @@
 <template>
-  <div class="snap-always snap-center">
-   <img :src="imagePath"></img>
+  <div class="snap-always snap-center flex-1 overflow-hidden rounded-[30px] shadow-md cursor-zoom-in mx-3">
+   <img :src="imagePath" class="w-full object-cover"></img>
   </div>
-  
-
 </template>
 
 <script setup>
