@@ -1,6 +1,7 @@
 <template>
     <div>
-        <BaseStaffCard :worker="workers"/>
+        asd
+        <BaseStaffCard :workers="workers"/>
     </div>
 </template>
 
@@ -15,6 +16,11 @@ export default {
     },
     computed: {
         ...mapState(useWorker, ['workers'])
+    },
+    methods: {
+        asd() {
+            console.log(this.workers);
+        }
     }
 }
 </script>
