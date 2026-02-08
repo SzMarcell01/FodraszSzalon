@@ -14,6 +14,7 @@ class Worker extends Model
 
     public $fillable = [
         "name",
-        "description"
+        "description",
+        "image_url"
     ];
 }
