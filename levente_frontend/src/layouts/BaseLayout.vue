@@ -1,6 +1,6 @@
 <template>
   <BaseHeader />
-  <main class="mx-auto  max-w-7xl">
+  <main class="mx-auto mx-5 max-w-7xl">
     <slot />
   </main>
 </template>

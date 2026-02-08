@@ -1,8 +1,22 @@
 @import "tailwindcss";
 
-h2 {
+h1 {
   font-family: 'Judson', serif;
-  color: #44223B;
+  color: white;
   font-weight: bold;
   font-size: 2rem;
+}
+
+h2 {
+  font-family: 'Judson', serif;
+  color: white;
+  font-weight: bold;
+}
+
+
+nav li a{
+  font-family: 'Judson', serif;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
 }
