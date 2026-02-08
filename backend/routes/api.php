@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResource('services', App\Http\Controllers\ServiceController::class)->only(['index']);
+Route::apiResource('workers', App\Http\Controllers\WorkerController::class)->only(['index']);

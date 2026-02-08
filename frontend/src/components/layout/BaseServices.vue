@@ -62,7 +62,7 @@
                     </ul>
                     <div class="text-center mt-4">
                         <button class="bg-[#44223b] text-white rounded-md px-10 py-3 text-md font-semibold">
-                            <h5>Összes megtekintés</h5>
+                            <span>Összes megtekintés</span>
                         </button>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                     <p class="text-sm text-gray-400 mb-4">Még nincsenek vélemények</p>
 
                     <button class="bg-[#44223b] text-white rounded-md w-full py-3 mb-6">
-                        <h5>Foglalj most</h5>
+                        <span>Foglalj most</span>
                     </button>
 
                     <div class="space-y-2">
