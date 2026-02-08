@@ -1,5 +1,5 @@
 <template>
-  <main class="mx-auto ">
+  <main class="mx-auto">
     <!--<main class="mx-auto max-w-7xl">-->
     <slot />
   </main>

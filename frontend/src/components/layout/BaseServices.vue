@@ -1,65 +1,12 @@
 <template>
-    <div id="services" class=" md:h-screen p-6">
+    <div id="services" class="h-screen p-6">
+        <h2 class="text-4xl pl-6 md:pl-32 font-serif text-[#4a2c40] mb-10">Szolgáltatásaink</h2>
 
-        <h2 class="text-4xl font-serif text-[#4a2c40] mb-10">Szolgáltatásaink</h2>
         <div class="flex flex-col md:flex-row gap-8 items-start">
             <div class="w-full md:w-2/3">
-                    <ul class="flex flex-col gap-3 mb-8">
-                        <li class="border-2 border-[#44223b] w-full rounded-md p-3 flex justify-between items-center">
-                            <div>
-                                <h3 class="font-sans">Női hajvágás </h3>
-                                <p class="font-light">60p</p>
-                            </div>
-                            <div class="my-auto">
-                                <span class="border border-[#929292] rounded-3xl px-2 py-1 hover:bg-gray-400 hover:text-white transition duration-700">Foglalás</span>
-                            </div>
-                        </li>
-                        <li class="border-2 border-[#44223b] w-full rounded-md p-3 flex justify-between items-center">
-                            <div>
-                                <h3 class="font-sans">Gyermek hajvágás</h3>
-                                <p class="font-light">30p</p>
-                            </div>
-                            <div class="my-auto">
-                                <span class="border border-[#929292] rounded-3xl px-2 py-1 hover:bg-gray-400 hover:text-white transition duration-700">Foglalás</span>
-                            </div>
-                        </li>
-                        <li class="border-2 border-[#44223b] w-full rounded-md p-3 flex justify-between items-center">
-                            <div>
-                                <h3 class="font-sans">Férfi hajvágás</h3>
-                                <p class="font-light">45p</p>
-                            </div>
-                            <div class="my-auto">
-                                <span class="border border-[#929292] rounded-3xl px-2 py-1 hover:bg-gray-400 hover:text-white transition duration-700">Foglalás</span>
-                            </div>
-                        </li>
-                        <li class="border-2 border-[#44223b] w-full rounded-md p-3 flex justify-between items-center">
-                            <div>
-                                <h3 class="font-sans">Konzultáció</h3>
-                                <p class="font-light">15p</p>
-                            </div>
-                            <div class="my-auto">
-                                <span class="border border-[#929292] rounded-3xl px-2 py-1 hover:bg-gray-400 hover:text-white transition duration-700">Foglalás</span>
-                            </div>
-                        </li>
-                        <li class="border-2 border-[#44223b] w-full rounded-md p-3 flex justify-between items-center">
-                            <div> 
-                                <h3 class="font-sans">Alkalmi smink</h3>
-                                <p class="font-light">60p</p>
-                            </div>
-                            <div class="my-auto">
-                                <span class="border border-[#929292] rounded-3xl px-2 py-1 hover:bg-gray-400 hover:text-white transition duration-700">Foglalás</span>
-                            </div>
-                        </li>
-                        <li class="border-2 border-[#44223b] w-full rounded-md p-3 flex justify-between items-center">
-                            <div>
-                                <h3 class="font-sans">Színezés</h3>
-                                <p class="font-light">75p</p>
-                            </div>
-                            <div class="my-auto">
-                                <span class="border border-[#929292] rounded-3xl px-2 py-1 hover:bg-gray-400 hover:text-white transition duration-700">Foglalás</span>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="flex flex-col gap-3 mb-8">
+                        <BaseService :services="servicesSlice"/>
+                    </div>
                     <div class="text-center mt-4">
                         <button class="bg-[#44223b] text-white rounded-md px-10 py-3 text-md font-semibold">
                             <span>Összes megtekintés</span>
@@ -69,7 +16,7 @@
 
                 <div class="w-full md:w-1/3 border border-gray-200 shadow-xl rounded-xl p-6 bg-white sticky top-10">
                     <h4 class="text-xl font-bold mb-1">Szolgáltatások</h4>
-                    <p class="text-sm text-gray-400 mb-4">Még nincsenek vélemények</p>
+                    <p class="text-sm text-gray-400 mb-4"></p>
 
                     <button class="bg-[#44223b] text-white rounded-md w-full py-3 mb-6">
                         <span>Foglalj most</span>
@@ -118,5 +65,30 @@
 </template>
 
 <script>
+import BaseService from '@components/BaseService.vue';
+import { mapActions, mapState } from 'pinia';
+import { useServiceStore } from '@/stores/ServiceStore.mjs';
 
+export default {
+    data(){
+        return{
+            servicesSlice: []
+        }
+    },
+    components: {
+        BaseService
+    },
+    computed:{
+        ...mapState(useServiceStore,['services'])
+    },
+    methods:{
+        ...mapActions(useServiceStore,['getServicesSlice']),
+        async loadServicesSlice() {
+            this.servicesSlice = await this.getServicesSlice()
+        }
+    },
+    mounted() {
+        this.loadServicesSlice()
+    }
+}
 </script>
