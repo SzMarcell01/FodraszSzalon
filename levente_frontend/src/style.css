@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+h2 {
+  font-family: 'Judson', serif;
+  color: #44223B;
+  font-weight: bold;
+  font-size: 2rem;
+}
