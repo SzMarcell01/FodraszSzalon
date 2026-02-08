@@ -34,7 +34,7 @@
         leave-from-class="translate-y-0"
         leave-to-class="-translate-y-full"
       >
-        <div v-if="menuOpen" class="absolute top-0 left-0 w-full h-screen bg-black/90 text-white flex flex-col items-center justify-center space-y-6  md:hidden z-10" >
+        <div v-if="menuOpen" class="fixed top-0 left-0 w-full h-screen bg-black/90 text-white flex flex-col items-center justify-center space-y-6  md:hidden z-10" >
           <a href="#">Főoldal</a>
           <a href="#">Galléria</a>
           <a href="#">Szolgáltatásaink</a>
