@@ -1,14 +1,8 @@
 <template>
-  <BaseHeader />
-  <main class="container mx-auto">
+  <main>
     <slot />
   </main>
 </template>
+
 <script>
-import BaseHeader from '@components/layout/BaseHeader.vue'
-export default {
-  components: {
-    BaseHeader
-  }
-}
 </script>

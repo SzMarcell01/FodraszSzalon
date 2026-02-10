@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            ServiceSeeder::class,WorkerSeeder::class
+            ServiceSeeder::class,WorkerSeeder::class,UserSeeder::class,
         ]);
     }
 }

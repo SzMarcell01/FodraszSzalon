@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResource('services', App\Http\Controllers\ServiceController::class)->only(['index']);
 Route::apiResource('workers', App\Http\Controllers\WorkerController::class)->only(['index']);
+
+// Adjunk neki nevet ->name('login')
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::middleware('auth:sanctum')->get('/user-data', function () {
+    return response()->json(['message' => 'Sikeresen lekérted a belső adatokat az API-n keresztül!']);
+});
