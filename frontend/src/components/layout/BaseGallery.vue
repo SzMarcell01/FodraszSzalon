@@ -1,7 +1,7 @@
 <template>
-    <div id="gallery" class="mx-auto md:h-screen mt-10">
+    <div id="gallery" class="md:mx-auto md:h-screen my-10">
       <h2 class="text-4xl font-serif pl-6 md:pl-32 text-[#4a2c40] mb-10">Tekintsd meg munkáinkat</h2>
-      
+
       <div ref="scrollContainer" class="flex gap-3 snap-x md:pl-56 snap-mandatory scroll-pl-96 overflow-x-scroll p-7 scroll-smooth no-scrollbar">
         <BaseCard v-for="imgUrl in images" :key="imgUrl" :imagePath="imgUrl" />
       </div>

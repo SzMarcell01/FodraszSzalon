@@ -14,8 +14,8 @@
         <li><a class="relative group py-2 transition duration-500 hover:text-[#c5b4a2]" href="#home">Főoldal <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
         <li><a class="relative group py-2 transition duration-500 hover:text-[#c5b4a2]" href="#gallery">Galéria <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
         <li><a class="relative group py-2 transition duration-500 hover:text-[#c5b4a2]" href="#services">Szolgáltatások <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
-        <li><a class="relative group py-2 transition duration-500 hover:text-[#c5b4a2]" href="#">Csapat <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
-        <li><a class="relative group py-2 transition duration-500 hover:text-[#c5b4a2]" href="#">Rólunk <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
+        <li><a class="relative group py-2 transition duration-500 hover:text-[#c5b4a2]" href="#staff">Csapat <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
+        <li><a class="relative group py-2 transition duration-500 hover:text-[#c5b4a2]" href="#about">Rólunk <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
       </ul>
     </div>
     <div class="md:hidden fixed top-0 left-0 w-full h-screen bg-white text-black flex flex-col items-center justify-center transition-all duration-300":class="isMenuOpen ? 'opacity-100 z-20' : 'opacity-0 pointer-events-none z-0'">
@@ -23,8 +23,8 @@
         <li><a href="#home"@click="isMenuOpen = false"class="hover:text-[#c5b4a2] transition">Főoldal <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
         <li><a href="#gallery"@click="isMenuOpen = false"class="hover:text-[#c5b4a2] transition">Galéria <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
         <li><a href="#services"@click="isMenuOpen = false"class="hover:text-[#c5b4a2] transition">Szolgáltatások <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
-        <li><a href="#"@click="isMenuOpen = false"class="hover:text-[#c5b4a2] transition">Csapat <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
-        <li><a href="#"@click="isMenuOpen = false"class="hover:text-[#c5b4a2] transition">Rólunk <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
+        <li><a href="#staff"@click="isMenuOpen = false"class="hover:text-[#c5b4a2] transition">Csapat <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
+        <li><a href="#about"@click="isMenuOpen = false"class="hover:text-[#c5b4a2] transition">Rólunk <span class="absolute bottom-0 left-0 w-0 h-px bg-[#c5b4a2] transition-all duration-700 ease-in-out group-hover:w-full"></span></a></li>
       </ul>
     </div>
   </nav>

@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+html{
+  scroll-behavior: smooth;
+}
 h2 {
   font-family: 'Judson', serif;
   color: #44223B;
