@@ -7,7 +7,7 @@
                     <p class="text-gray-400">{{ service.time }}</p>
                 </div>
                 <div class="flex items-center">
-                    <RouterLink to="#" class="border px-4 py-1 rounded-full border-gray-400 transition-colors duration-400 ease-in-out hover:border-[#44223b] hover:text-white hover:bg-[#743b65]">Részletek</RouterLink>
+                    <RouterLink :to="{name: 'services-page'}"  class="border px-4 py-1 rounded-full border-gray-400 transition-colors duration-400 ease-in-out hover:border-[#44223b] hover:text-white hover:bg-[#743b65]">{{ text }}</RouterLink>
                 </div>
             </div>
         </div>
@@ -17,7 +17,8 @@
 <script>
 export default {
     props: {
-        services: Object
+        services: Object,
+        text: String
     }
 }
 </script>
