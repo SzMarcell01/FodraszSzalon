@@ -4,6 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -21,8 +23,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'img_url', // Ne felejtsd el hozzáadni a fillable-hez is!
+        'image_url',
     ];
+
+    public function services() // Többes szám!
+    {
+        return $this->belongsToMany(Service::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

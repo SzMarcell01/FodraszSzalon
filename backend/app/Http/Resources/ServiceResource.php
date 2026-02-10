@@ -18,6 +18,7 @@ class ServiceResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'time' => $this->time,
+            'user' => new UserResource($this->whenLoaded('user')),
         ];
     }
 }

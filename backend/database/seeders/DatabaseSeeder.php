@@ -2,25 +2,28 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\service; // Figyelj, nálad kisbetűs az osztálynév!
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
+        // 1. Lefuttatjuk az alap seedereket
         $this->call([
-            ServiceSeeder::class,WorkerSeeder::class,UserSeeder::class,
+            ServiceSeeder::class,
+            WorkerSeeder::class,
+            UserSeeder::class,
         ]);
+    
+        // 2. Lekérjük az összes szolgáltatás ID-ját egy tömbbe
+        $allServiceIds = \App\Models\service::pluck('id')->toArray();
+    
+        // 3. Minden felhasználóhoz hozzárendeljük az ÖSSZES szolgáltatást
+        $users = \App\Models\User::all();
+        foreach ($users as $user) {
+            $user->services()->attach($allServiceIds);
+        }
     }
 }

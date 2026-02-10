@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class service extends Model
 {
@@ -15,4 +17,9 @@ class service extends Model
         'name',
         'time',
     ];
+
+    public function user() : BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
+    }
 }
