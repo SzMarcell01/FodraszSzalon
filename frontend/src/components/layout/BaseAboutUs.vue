@@ -71,11 +71,10 @@
 
         <div class="w-full lg:w-1/2 mt-4 lg:mt-0">
           <div class="relative group px-2 md:px-0">
-            <div class="absolute -inset-2 md:-inset-4 border-2 border-[#44223b]/10 rounded-2xl transform translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2"></div>
-            
-            <div class="relative bg-white p-1 md:p-2 rounded-2xl shadow-xl overflow-hidden aspect-video lg:aspect-square max-h-[350px] md:max-h-[500px]">
+            <div class="absolute border-2 border-[#44223b]/10 rounded-2xl transform translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2"></div>
+            <div class="relative bg-white p-1 md:p-2 rounded-2xl shadow-xl overflow-hidden aspect-video lg:aspect-square max-h-87.5 md:max-h-125">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2695.897!2d19.068!3d47.487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDI5JzEzLjIiTiAxOcKwMDQnMDQuOCJF!5e0!3m2!1shu!2shu!4v123456789" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2695.285680420646!2d19.05502197671774!3d47.50382739506835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dc6c90327891%3A0xf8bfe159695e27db!2sBudapest%2C%20Haj%C3%B3s%20u.!5e0!3m2!1shu!2shu!4v1770584565356!5m2!1shu!2shu"
                 class="w-full h-full rounded-xl grayscale-[0.2] contrast-[1.1]"
                 style="border:0;" 
                 allowfullscreen="" 

@@ -37,9 +37,11 @@
       
         <p class="p-3">Nálunk a hajad a kreativitásunk vászna. Trendi, precíz, rád szabott vágások,<br> amik tényleg tükrözik a személyiséged. Foglalj online, és hagyd, hogy a <br> profik megalkossák a tökéletes frizurát.</p>
         
-       <button class="border text-white hover:bg-[#fcfcfc42] py-3 px-10 text-sm font-semibold transition duration-300 ease-out transform hover:scale-110">
-          Szolgáltatásaink
-        </button>
+        <a href="#services">
+          <button class="border text-white hover:bg-[#fcfcfc42] py-3 px-10 text-sm font-semibold transition duration-300 ease-out transform hover:scale-110">
+            Szolgáltatásaink
+          </button>
+        </a>
       </div>
     </div>
   </div>

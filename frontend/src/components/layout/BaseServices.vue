@@ -110,16 +110,16 @@ export default {
         <div class="w-full lg:w-2/3 order-2 lg:order-1">
           <div class="bg-white rounded-2xl p-5 md:p-8 shadow-sm border border-gray-100">
             <div class="divide-y divide-gray-100">
-              <BaseService :services="servicesSlice" />
+              <BaseService :services="servicesSlice" :text="text"/>
             </div>
             
             <div class="mt-8 md:mt-10 flex justify-center">
-              <button class="w-full sm:w-auto group flex items-center justify-center gap-2 bg-transparent border-2 border-[#44223b] text-[#44223b] hover:bg-[#44223b] hover:text-white transition-all duration-300 rounded-full px-8 py-4 md:py-3 font-semibold uppercase tracking-wider text-sm">
+              <RouterLink :to="{name: 'services-page'}" class="w-full sm:w-auto group flex items-center justify-center gap-2 bg-transparent border-2 border-[#44223b] text-[#44223b] hover:bg-[#44223b] hover:text-white transition-all duration-300 rounded-full px-8 py-4 md:py-3 font-semibold uppercase tracking-wider text-sm">
                 <span>Összes megtekintése</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -129,10 +129,12 @@ export default {
             <div class="absolute -right-10 -top-10 w-32 md:w-40 h-32 md:h-40 bg-white/5 rounded-full"></div>
             
             <h4 class="text-xl md:text-2xl font-serif mb-6 relative z-10">Időpontfoglalás</h4>
+            <RouterLink :to="{name: 'services-page'}">
+                <button class="w-full bg-white text-[#44223b] active:scale-95 hover:bg-gray-100 transition-all rounded-xl py-4 font-bold text-lg mb-8 shadow-lg relative z-10">
+                    FOGLALJ MOST
+                </button>
+            </RouterLink>
             
-            <button class="w-full bg-white text-[#44223b] active:scale-95 hover:bg-gray-100 transition-all rounded-xl py-4 font-bold text-lg mb-8 shadow-lg relative z-10">
-              FOGLALJ MOST
-            </button>
 
             <div class="space-y-3 md:space-y-4 relative z-10">
               <p class="text-white/60 uppercase text-xs tracking-[0.2em] font-bold mb-4">Nyitvatartás</p>
@@ -154,7 +156,7 @@ export default {
                   </div>
                   <div>
                     <p class="text-sm font-light leading-relaxed">
-                      Budapest, Hajós u. 88,<br>
+                      Budapest, Hajós u. 31,<br>
                       1066 Magyarország
                     </p>
                     <a href="https://maps.google.com" target="_blank" class="inline-block mt-2 text-xs font-bold border-b border-white/40 hover:border-white transition-all">ÚTBAIGAZÍTÁS</a>
@@ -187,7 +189,8 @@ export default {
                 { name: 'Péntek', hours: '08:00 - 18:00' },
                 { name: 'Szombat', hours: 'Zárva', closed: true },
                 { name: 'Vasárnap', hours: 'Zárva', closed: true }
-            ]
+            ],
+            text: "Részletek"
         }
     },
     computed: {
