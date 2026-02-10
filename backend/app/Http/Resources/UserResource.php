@@ -19,6 +19,7 @@ class UserResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'email' => $this->email,
+            'image_url' => $this->image_url, // Ha van ilyen mező a User modellben
             // További mezők, amiket szeretnél visszaadni
         ];
     }

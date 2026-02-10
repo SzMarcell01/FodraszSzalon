@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'img_url', // Ne felejtsd el hozzáadni a fillable-hez is!
     ];
 
     /**
