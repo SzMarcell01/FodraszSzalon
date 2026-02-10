@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::apiResource('services', App\Http\Controllers\ServiceController::class)->only(['index']);
 Route::apiResource('workers', App\Http\Controllers\WorkerController::class)->only(['index']);
 
+Route::apiResource('users', App\Http\Controllers\Api\AuthController::class)->only(['index']);
+
 // Adjunk neki nevet ->name('login')
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
