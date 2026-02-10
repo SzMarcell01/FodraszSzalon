@@ -13,23 +13,44 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import axios from 'axios';
-import BaseLayout from '@/layouts/BaseLayout.vue'; // Ellenőrizd az elérési utat!
+import { http } from "@utils/http.mjs";
+import { useRouter } from 'vue-router';
+import BaseLayout from '@layouts/BaseLayout.vue';
 
 const message = ref('Betöltés...');
+const router = useRouter();
 
 const fetchDashboardData = async () => {
   const token = localStorage.getItem('auth_token');
+
+  if (!token) {
+    router.push('login');
+    return;
+  }
+
   try {
-    const response = await axios.get('http://localhost:8000/api/user-data', {
+    // Itt definiáljuk a response-t
+    const res = await http.get('/user-data', {
       headers: {
-        'Accept': 'application/json',
         'Authorization': `Bearer ${token}`
       }
     });
-    message.value = response.data.message;
+    
+    // Csak ha sikeres a kérés, akkor írjuk be az üzenetet
+    message.value = res.data.message;
+
   } catch (error) {
-    message.value = "Hiba az adatok lekérésekor.";
+    console.error("Hiba történt:", error);
+    
+    // Itt már nem szabad a 'response' változóra hivatkozni, 
+    // helyette az 'error.response'-t kell nézni!
+    if (error.response?.status === 401) {
+      message.value = "Lejárt munkamenet, jelentkezz be újra.";
+      localStorage.removeItem('auth_token');
+      router.push('/login');
+    } else {
+      message.value = "Hiba az adatok lekérésekor.";
+    }
   }
 };
 
