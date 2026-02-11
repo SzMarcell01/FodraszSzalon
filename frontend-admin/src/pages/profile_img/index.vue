@@ -42,15 +42,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { http } from "@utils/http.mjs";
 import BaseLayout from '@layouts/BaseLayout.vue';
+import { useRouter } from 'vue-router'; // Add hozzá a routert
 
 const selectedFile = ref(null);
 const previewUrl = ref(null);
 const loading = ref(false);
 const message = ref('');
 const status = ref('');
+
+const router = useRouter();
+
+onMounted(() => {
+  const token = localStorage.getItem('auth_token');
+  if (!token) {
+    router.push({ name: 'login' });
+  }
+});
 
 // Amikor a felhasználó kiválaszt egy fájlt
 const onFileChange = (event) => {
