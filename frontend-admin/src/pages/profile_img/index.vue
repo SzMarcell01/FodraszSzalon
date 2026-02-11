@@ -30,6 +30,10 @@
             <p v-if="message" :class="status === 'success' ? 'text-green-600' : 'text-red-600'" class="text-center text-sm font-medium">
               {{ message }}
             </p>
+
+            <RouterLink :to="{name: 'dashboard'}" class="block text-center text-sm text-[#44223b]/80 hover:text-[#44223b]">
+              Vissza a műszerfalra
+            </RouterLink>
           </div>
         </div>
       </div>
