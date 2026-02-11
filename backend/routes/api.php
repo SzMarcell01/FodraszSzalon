@@ -1,28 +1,22 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\WorkerController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
-
-Route::apiResource('services', App\Http\Controllers\ServiceController::class)->only(['index']);
-Route::apiResource('workers', App\Http\Controllers\WorkerController::class)->only(['index']);
-
-Route::apiResource('users', App\Http\Controllers\Api\AuthController::class)->only(['index']);
-
-// Adjunk neki nevet ->name('login')
+// Nyilvános útvonalak
+Route::get('services', [ServiceController::class, 'index']);
+Route::get('workers', [WorkerController::class, 'index']);
+Route::get('users', [AuthController::class, 'index']);
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
-Route::middleware('auth:sanctum')->get('/user-data', function () {
-    return response()->json(['message' => 'Sikeresen lekérted a belső adatokat az API-n keresztül!']);
+// Védett útvonalak (Csak bejelentkezve)
+Route::middleware('auth:sanctum')->group(function () {
+    // Ez az egy sor kell csak a user adatokhoz:
+    Route::get('/user-data', [AuthController::class, 'userData']);
+    
+    // Ide jöhetnek majd a későbbi védett dolgok (pl. profil frissítés)
 });
+
+Route::middleware('auth:sanctum')->post('/user/update-image', [AuthController::class, 'updateProfileImage']);
