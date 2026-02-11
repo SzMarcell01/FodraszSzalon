@@ -7,5 +7,31 @@ export const http = axios.create({
         "Content-Type": "application/json" 
     }
 })
-// http://127.0.0.1:8000/api
-// http://192.168.56.1:8000/api
+
+// EZ A RÉSZ HIÁNYZIK NÁLAD:
+// Minden kérés előtt lefut, és ha van token, beteszi a fejlécbe
+http.interceptors.request.use(
+    (config) => {
+        const token = localStorage.getItem('auth_token');
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    },
+    (error) => {
+        return Promise.reject(error);
+    }
+);
+
+// Opcionális: Ha 401-et kapunk (lejárt token), dobjon ki a loginra
+http.interceptors.response.use(
+    (response) => response,
+    (error) => {
+        if (error.response && error.response.status === 401) {
+            localStorage.removeItem('auth_token');
+            // Itt nehéz routert hívni, de a window.location elvisz
+            // window.location.href = '/login'; 
+        }
+        return Promise.reject(error);
+    }
+);

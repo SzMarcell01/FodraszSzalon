@@ -2,7 +2,7 @@
   <BaseLayout>
     <section class="bg-[#faf9f6] min-h-screen py-12 px-4">
       <!-- DASHBOARD MESSAGE START -->
-      <div class="max-w-7xl mx-auto gap-6 grid grid-cols-1 md:grid-cols-211 ">
+      <div class="max-w-7xl mx-auto">
         <div class="w-30 h-30 rounded-full overflow-hidden border-4 border-[#44223b]/10 shadow-inner bg-gray-50 mb-6">
           <img v-if="userImage" :src="BaseURL + userImage" alt="Profilkép">
           <div v-else class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-full flex items-center justify-center text-gray-500">
@@ -37,7 +37,7 @@
         <!-- SEVICES EDITING -->
        <div class="max-w-7xl mx-auto mt-6 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
           <p class="text-[#44223b]">Szolgáltatások szerkesztése: <strong>Tölts fel szolgáltatásokat, hogy a MolnArt weboldalon láthassák a felhasználók, hogy miket kínál.
-          <RouterLink to="#">
+          <RouterLink :to="{name: 'profile_services'}">
             <button type="submit" :disabled="loading"
               class="sm:w-md w-full mt-5 group flex items-center justify-center gap-2 bg-[#44223b] text-white hover:bg-[#5a2d4e] active:scale-[0.98] transition-all duration-300 rounded-xl py-4 font-semibold uppercase tracking-widest text-sm shadow-lg disabled:opacity-50">
               <span>Szolgáltatás szerkesztése</span>

@@ -49,12 +49,11 @@ class AuthController extends Controller
 
     public function userData(Request $request)
     {
-        // A middleware már azonosította a júzert a token alapján, 
-        // így a $request->user() tartalmazza a teljes User objektumot.
+        // Itt a load('services') kulcsfontosságú!
         return response()->json([
             'status' => 'success',
             'message' => 'Sikeres betöltés',
-            'user' => $request->user() 
+            'user' => $request->user()->load('services') 
         ], 200);
     }
 

@@ -18,7 +18,7 @@ class service extends Model
         'time',
     ];
 
-    public function user() : BelongsToMany
+    public function users()
     {
         return $this->belongsToMany(User::class);
     }

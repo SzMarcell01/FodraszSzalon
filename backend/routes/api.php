@@ -1,22 +1,22 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\WorkerController;
+use App\Http\Controllers\Api\ServiceController as ApiServiceController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 // Nyilvános útvonalak
-Route::get('services', [ServiceController::class, 'index']);
 Route::get('users', [AuthController::class, 'index']);
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 // Védett útvonalak (Csak bejelentkezve)
+// routes/api.php javított verzió
 Route::middleware('auth:sanctum')->group(function () {
-    // Ez az egy sor kell csak a user adatokhoz:
-    Route::get('/user-data', [AuthController::class, 'userData']);
-    
-    // Ide jöhetnek majd a későbbi védett dolgok (pl. profil frissítés)
-});
+    // Használd a Controllerben lévő metódust, az tisztább
+    Route::get('/user-data', [AuthController::class, 'userData']); 
 
-Route::middleware('auth:sanctum')->post('/user/update-image', [AuthController::class, 'updateProfileImage']);
+    Route::get('/services', [ApiServiceController::class, 'index']);
+    Route::post('/user/services/sync', [ApiServiceController::class, 'sync']);
+    Route::post('/user/update-image', [AuthController::class, 'updateProfileImage']);
+});

@@ -27,9 +27,10 @@ class User extends Authenticatable
         'description',
     ];
 
-    public function services() // Többes szám!
+    public function services()
     {
-        return $this->belongsToMany(Service::class);
+        // A 'withTimestamps' azért kell, ha látni akarjuk, mikor rendelték hozzá
+        return $this->belongsToMany(Service::class)->withTimestamps();
     }
 
     /**
