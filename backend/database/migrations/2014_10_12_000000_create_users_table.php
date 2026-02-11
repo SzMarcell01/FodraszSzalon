@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->string('image_url')->nullable(); // Opcionális mező a profilkép URL-jének tárolására
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

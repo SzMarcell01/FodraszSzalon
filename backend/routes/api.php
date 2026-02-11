@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Route;
 
 // Nyilvános útvonalak
 Route::get('services', [ServiceController::class, 'index']);
-Route::get('workers', [WorkerController::class, 'index']);
 Route::get('users', [AuthController::class, 'index']);
+
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 // Védett útvonalak (Csak bejelentkezve)

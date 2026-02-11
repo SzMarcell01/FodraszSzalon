@@ -13,7 +13,6 @@ class DatabaseSeeder extends Seeder
         // 1. Lefuttatjuk az alap seedereket
         $this->call([
             ServiceSeeder::class,
-            WorkerSeeder::class,
             UserSeeder::class,
         ]);
     

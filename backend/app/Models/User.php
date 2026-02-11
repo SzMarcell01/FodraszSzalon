@@ -24,6 +24,7 @@ class User extends Authenticatable
         'email',
         'password',
         'image_url',
+        'description',
     ];
 
     public function services() // Többes szám!
