@@ -25,7 +25,6 @@ class User extends Authenticatable
         'password',
         'image_url',
         'description',
-        'rating',
     ];
 
     public function services()
