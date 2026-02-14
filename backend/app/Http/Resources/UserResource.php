@@ -21,6 +21,7 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'image_url' => $this->image_url, // Ha van ilyen mező a User modellben
             'description' => $this->description, // Ha van ilyen mező a User modellben
+            'rating' => $this->rating, // Ha van ilyen mező a User modellben
             'services' => ServiceResource::collection($this->whenLoaded('services')),
             // További mezők, amiket szeretnél visszaadni
         ];
