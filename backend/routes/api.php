@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/user/services/sync', [ApiServiceController::class, 'sync']);
     Route::post('/user/update-image', [AuthController::class, 'updateProfileImage']);
 });
+
+Route::apiResource('comments', \App\Http\Controllers\CommentController::class)->only(['index']);

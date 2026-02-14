@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ServiceSeeder::class,
             UserSeeder::class,
+            CommentSeeder::class,
         ]);
     
         // 2. Lekérjük az összes szolgáltatás ID-ját egy tömbbe
