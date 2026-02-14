@@ -15,7 +15,7 @@ class AuthController extends Controller
     public function index()
     {
         //return UserResource::collection(User::all());
-        return UserResource::collection(User::with('services')->get());
+        return UserResource::collection(User::with('services', 'comments')->get());
     }
 
     public function login(Request $request)

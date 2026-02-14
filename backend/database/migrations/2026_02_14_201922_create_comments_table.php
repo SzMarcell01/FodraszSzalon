@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->double('rating')->nullable();
             $table->string('comment')->nullable();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

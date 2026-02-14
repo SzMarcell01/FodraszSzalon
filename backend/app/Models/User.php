@@ -33,6 +33,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Service::class)->withTimestamps();
     }
 
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
