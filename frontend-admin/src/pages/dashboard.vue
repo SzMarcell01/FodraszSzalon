@@ -34,7 +34,7 @@
           </strong></p>
         </div>
 
-        <!-- SEVICES EDITING -->
+        <!-- SERVICES EDITING -->
        <div class="max-w-7xl mx-auto mt-6 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
           <p class="text-[#44223b]">Szolgáltatások szerkesztése: <strong>Tölts fel szolgáltatásokat, hogy a MolnArt weboldalon láthassák a felhasználók, hogy miket kínál.
           <RouterLink :to="{name: 'profile_services'}">
@@ -48,6 +48,23 @@
           </RouterLink>
           </strong></p>
         </div>
+        <!-- SERVICES ENDING -->
+
+        <!-- COMMENTS EDITING -->
+       <div class="max-w-7xl mx-auto mt-6 p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
+          <p class="text-[#44223b]">Értékeléseid megtekintése: <strong>Tekintse meg a MolnArt weboldalon kapott értékeléseit, hogy lássa, mit gondolnak a vendégei a szolgáltatásairól.
+          <RouterLink :to="{name: 'show_comments'}">
+            <button type="submit" :disabled="loading"
+              class="sm:w-md w-full mt-5 group flex items-center justify-center gap-2 bg-[#44223b] text-white hover:bg-[#5a2d4e] active:scale-[0.98] transition-all duration-300 rounded-xl py-4 font-semibold uppercase tracking-widest text-sm shadow-lg disabled:opacity-50">
+              <span>Hozzászólások megtekintése</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7" />
+              </svg>
+            </button>
+          </RouterLink>
+          </strong></p>
+        </div>
+        <!-- COMMENTS ENDING -->
     </section>
   </BaseLayout>
 </template>
