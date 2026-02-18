@@ -1,11 +1,11 @@
 <script>
 import { useServiceStore } from "@/stores/ServiceStore.mjs";
-import { useWorker } from "@stores/WorkerStore.mjs";
+import { useUser } from "@stores/UserStore.mjs";
 
 export default {
   mounted() {
     useServiceStore().getServices();
-    useWorker().getWorkers();
+    useUser().getUsers();
   },
 }
 </script>

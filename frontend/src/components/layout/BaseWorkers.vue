@@ -37,7 +37,7 @@ export default {
       </div>
 
       <div class="flex flex-wrap gap-6 md:gap-12 justify-center md:justify-start items-start">
-        <BaseStaffCard :workers="workers" class="staff-card-transition w-full sm:w-auto" />
+        <BaseStaffCard :users="users" class="staff-card-transition w-full sm:w-auto" />
       </div>
 
       <div class="mt-12 md:mt-20 border-t border-gray-50 pt-8 md:pt-12 px-6">
@@ -51,15 +51,15 @@ export default {
 
 <script>
 import { mapState } from 'pinia';
-import { useWorker } from '@stores/WorkerStore.mjs';
 import BaseStaffCard from './BaseStaffCard.vue';
+import { useUser } from '@stores/UserStore.mjs';
 
 export default {
     components: {
         BaseStaffCard
     },
     computed: {
-        ...mapState(useWorker, ['workers'])
+        ...mapState(useUser, ['users'])
     }
 }
 </script>

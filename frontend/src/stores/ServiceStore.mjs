@@ -9,10 +9,6 @@ export const useServiceStore = defineStore("service-store", {
     async getServices() {
       const response = await http.get("/services");
       this.services = response.data.data;
-    },
-    async getServicesSlice() { 
-      const response = await http.get("/services");
-      return response.data.data.slice(0,6);
-    },
+    }
   }
 });

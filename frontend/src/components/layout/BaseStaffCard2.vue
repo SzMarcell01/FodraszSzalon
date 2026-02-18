@@ -1,8 +1,8 @@
 <template>
-    <div v-for="worker in workers">
-        <img :src="BaseUrl + worker.image_url" alt="" class="rounded-full w-44 h-44 object-cover">
+    <div v-for="user in users">
+        <img :src="BaseUrl + user.image_url" alt="" class="rounded-full w-44 h-44 object-cover">
         <hr>
-        <span>{{ worker.name }}</span>
+        <span>{{ user.name }}</span>
     </div>
 
 </template>
@@ -10,7 +10,7 @@
 
 export default {
     props:{
-        workers: Object
+        users: Array
     },
     data(){
       return{
