@@ -15,7 +15,7 @@ class AuthController extends Controller
     public function index()
     {
         //return UserResource::collection(User::all());
-        return UserResource::collection(User::with('services')->get());
+        return UserResource::collection(User::with('services', 'comments')->get());
     }
 
     public function login(Request $request)
@@ -49,11 +49,15 @@ class AuthController extends Controller
 
     public function userData(Request $request)
     {
-        // Itt a load('services') kulcsfontosságú!
+        // 1. Betöltjük a kapcsolatokat
+        $user = $request->user()->load(['services', 'comments']);
+    
+        // 2. VISSZAAADJUK A RESOURCE-ON KERESZTÜL
+        // Így a 'whenLoaded' parancsok le fognak futni!
         return response()->json([
             'status' => 'success',
             'message' => 'Sikeres betöltés',
-            'user' => $request->user()->load('services') 
+            'user' => new UserResource($user) // <--- Ez a kulcs!
         ], 200);
     }
 
