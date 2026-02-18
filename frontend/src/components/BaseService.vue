@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-for="(service, key) in services" :key="key" class="p-4 m-2 w-full text-black rounded-sm border-[#44223B] border">
+        <div v-for="service in services" :key="service.id" class="p-4 m-2 w-full text-black rounded-sm border-[#44223B] border">
             <div class="flex justify-between">
                 <div>
                     <h3 class="font-semibold">{{ service.name }}</h3>
@@ -17,7 +17,7 @@
 <script>
 export default {
     props: {
-        services: Object,
+        services: Array,
         text: String
     }
 }

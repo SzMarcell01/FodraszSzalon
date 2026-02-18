@@ -110,7 +110,7 @@ export default {
         <div class="w-full lg:w-2/3 order-2 lg:order-1">
           <div class="bg-white rounded-2xl p-5 md:p-8 shadow-sm border border-gray-100">
             <div class="divide-y divide-gray-100">
-              <BaseService :services="servicesSlice" :text="text"/>
+              <BaseService :services="services" :text="text"/>
             </div>
             
             <div class="mt-8 md:mt-10 flex justify-center">
@@ -173,8 +173,6 @@ export default {
 
 <script>
 import BaseService from '@components/BaseService.vue';
-import { mapActions, mapState } from 'pinia';
-import { useServiceStore } from '@/stores/ServiceStore.mjs';
 
 export default {
     components: { BaseService },
@@ -190,20 +188,16 @@ export default {
                 { name: 'Szombat', hours: 'Zárva', closed: true },
                 { name: 'Vasárnap', hours: 'Zárva', closed: true }
             ],
+            services: [
+                { name: "Női hajvágás", time: "60 perc"},
+                { name: "Gyermek hajvágás", time: "30 perc"},
+                { name: "Férfi hajvágás", time: "45 perc"},
+                { name: "Konzultáció", time: "15 perc"},
+                { name: "Egész melír", time: "180 perc"},
+                { name: "Esküvői és alkalmi frizura", time: "90 perc"},
+            ],
             text: "Részletek"
         }
-    },
-    computed: {
-        ...mapState(useServiceStore, ['services'])
-    },
-    methods: {
-        ...mapActions(useServiceStore, ['getServicesSlice']),
-        async loadServicesSlice() {
-            this.servicesSlice = await this.getServicesSlice()
-        }
-    },
-    mounted() {
-        this.loadServicesSlice()
     }
 }
 </script>
